@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamHome Price Predictor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>DreamHome Predictor</h1>
+            <p>Unlock the value of your future home with AI precision.</p>
+        </header>
+
+        <main>
+            <div class="card glass">
+                <form id="predictionForm">
+                    <div class="grid-2">
+                        <div class="input-group">
+                            <label for="bedrooms">Bedrooms</label>
+                            <input type="number" id="bedrooms" name="bedrooms" min="1" max="10" required
+                                placeholder="e.g. 3">
+                        </div>
+                        <div class="input-group">
+                            <label for="bathrooms">Bathrooms</label>
+                            <input type="number" id="bathrooms" name="bathrooms" min="1" max="10" required
+                                placeholder="e.g. 2">
+                        </div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="input-group">
+                            <label for="sqft">Square Feet</label>
+                            <input type="number" id="sqft" name="sqft" min="100" required placeholder="e.g. 1500">
+                        </div>
+                        <div class="input-group">
+                            <label for="floors">Floors</label>
+                            <select id="floors" name="floors">
+                                <option value="1">1 Floor</option>
+                                <option value="1.5">1.5 Floors</option>
+                                <option value="2">2 Floors</option>
+                                <option value="2.5">2.5 Floors</option>
+                                <option value="3">3 Floors</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="input-group">
+                            <label for="age">Age (Years)</label>
+                            <input type="number" id="age" name="age" min="0" required placeholder="e.g. 10">
+                        </div>
+                        <div class="input-group">
+                            <label for="location">Location</label>
+                            <select id="location" name="location">
+                                <option value="Suburb">Suburb</option>
+                                <option value="City Center">City Center</option>
+                                <option value="Rural">Rural</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group" style="margin-bottom: 20px;">
+                        <label for="currency">Currency</label>
+                        <select id="currency" name="currency">
+                            <option value="USD">USD ($)</option>
+                            <option value="INR">INR (₹)</option>
+                        </select>
+                    </div>
+
+                    <div class="amenities-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="waterfront" name="waterfront">
+                            <span class="checkmark"></span>
+                            Waterfront View
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="garage" name="garage">
+                            <span class="checkmark"></span>
+                            Garage
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="garden" name="garden">
+                            <span class="checkmark"></span>
+                            Garden
+                        </label>
+                    </div>
+
+                    <button type="submit" class="cta-button">Predict Price</button>
+                </form>
+            </div>
+
+            <div id="resultArea" class="result-card glass hidden">
+                <h2>Estimated Valuation</h2>
+                <div id="loadingSpinner" class="hidden">
+                    <div class="spinner"></div>
+                </div>
+                <div id="priceDisplay" class="price"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

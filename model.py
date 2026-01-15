@@ -47,7 +47,9 @@ def train_and_evaluate(X, y):
     print(f"RMSE: {np.sqrt(mean_squared_error(y_test, y_pred_rf))}")
     print(f"R2 Score: {r2_score(y_test, y_pred_rf)}")
     
-    return y_test, y_pred_lr, y_pred_rf
+    print(f"R2 Score: {r2_score(y_test, y_pred_rf)}")
+    
+    return y_test, y_pred_lr, y_pred_rf, lr, rf
 
 def plot_results(y_test, y_pred, title, filename):
     plt.figure(figsize=(10, 6))
@@ -71,8 +73,16 @@ if __name__ == "__main__":
         X, y = load_and_preprocess_data(data_path)
         
         print("Training models...")
-        y_test, y_pred_lr, y_pred_rf = train_and_evaluate(X, y)
+        y_test, y_pred_lr, y_pred_rf, lr, rf = train_and_evaluate(X, y)
         
         print("Plotting results...")
         plot_results(y_test, y_pred_lr, 'Linear Regression: Actual vs Predicted', 'lr_results.png')
         plot_results(y_test, y_pred_rf, 'Random Forest: Actual vs Predicted', 'rf_results.png')
+        
+        # Save model and columns
+        import joblib
+        print("Saving model and columns...")
+        joblib.dump(rf, 'rf_model.pkl')
+        joblib.dump(X.columns, 'model_columns.pkl')
+        print("Model saved to rf_model.pkl")
+        print("Model columns saved to model_columns.pkl")
