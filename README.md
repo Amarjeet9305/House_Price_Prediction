@@ -15,12 +15,16 @@ A machine learning project to predict house prices using features like location,
 <img width="1031" height="697" alt="Screenshot 2026-02-04 085622" src="https://github.com/user-attachments/assets/29b3ada4-8c5f-49df-9d88-7a457af5d98a" />
 
 **Step2: Redirect through Running on http://127.0.0.1:5000 port
+<img width="1318" height="760" alt="Screenshot 2026-02-04 085649" src="https://github.com/user-attachments/assets/b364fdaf-0709-4422-92a0-da15cd3d9f2d" />
+
 
 **Step3: Fill the Client Requirement and origin
 <img width="1290" height="678" alt="Screenshot 2026-02-04 085731" src="https://github.com/user-attachments/assets/c759ab3f-7d54-4c55-b46d-31c8c5a6b30c" />
 
-**Step4: Predict the on the basis of requirement 
-![Uploading Screenshot 2026-02-04 085756.png…]()
+**Step4: Predict the house price on the basis of requirement.
+<img width="1342" height="641" alt="Screenshot 2026-02-04 085756" src="https://github.com/user-attachments/assets/f71fff41-bf1c-4a7c-a813-d83ad598bd0b" />
+
+
 
 
 ## Installation
@@ -82,4 +86,5 @@ Follow the prompts to enter house details and get a price estimate.
 *   `static/`: Contains CSS and JavaScript files.
 *   `rf_model.pkl`: key file containing the trained Random Forest model.
 *   `model_columns.pkl`: key file containing the columns used during training.
+
 
