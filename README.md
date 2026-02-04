@@ -10,6 +10,19 @@ A machine learning project to predict house prices using features like location,
 *   **Currency Conversion**: Supports price display in USD and INR.
 *   **Visualizations**: Generates plots comparing actual vs. predicted prices.
 
+# Predicting Scenerios
+**Step1: Execute the flask 
+<img width="1031" height="697" alt="Screenshot 2026-02-04 085622" src="https://github.com/user-attachments/assets/29b3ada4-8c5f-49df-9d88-7a457af5d98a" />
+
+**Step2: Redirect through Running on http://127.0.0.1:5000 port
+
+**Step3: Fill the Client Requirement and origin
+<img width="1290" height="678" alt="Screenshot 2026-02-04 085731" src="https://github.com/user-attachments/assets/c759ab3f-7d54-4c55-b46d-31c8c5a6b30c" />
+
+**Step4: Predict the on the basis of requirement 
+![Uploading Screenshot 2026-02-04 085756.png…]()
+
+
 ## Installation
 
 1.  Clone the repository:
@@ -69,3 +82,4 @@ Follow the prompts to enter house details and get a price estimate.
 *   `static/`: Contains CSS and JavaScript files.
 *   `rf_model.pkl`: key file containing the trained Random Forest model.
 *   `model_columns.pkl`: key file containing the columns used during training.
+
